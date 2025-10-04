@@ -1,10 +1,18 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const links = (
     <>
-      <li className="m-2 cursor-pointer">Home</li>
-      <li className="m-2 cursor-pointer">About</li>
+      <Link to="/" className="m-2 cursor-pointer">
+        Home
+      </Link>
+      <Link to="/about" className="m-2 cursor-pointer">
+        About
+      </Link>
+      <Link to="/readList" className="m-2 cursor-pointer">
+        ReadList
+      </Link>
     </>
   );
   return (
