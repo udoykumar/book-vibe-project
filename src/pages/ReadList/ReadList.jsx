@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { getStoredBook } from "../../utilite/addToDB";
-import Book from "../Book/Book";
+import ReadBook from "../../component/ReadBook/ReadBook";
 const ReadList = () => {
   const [readList, setReadList] = useState([]);
   const [sort, setSort] = useState("");
@@ -58,7 +58,7 @@ const ReadList = () => {
         <TabPanel>
           <h2>Read Book LIst {readList.length}</h2>
           {readList.map((book) => (
-            <Book key={book.bookId} singleBook={book} />
+            <ReadBook key={book.bookId} book={book} />
           ))}
         </TabPanel>
         <TabPanel>

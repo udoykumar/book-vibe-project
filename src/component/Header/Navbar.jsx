@@ -1,18 +1,19 @@
 import React from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
+import ReactiveButton from "reactive-button";
 
 const Navbar = () => {
   const links = (
     <>
-      <Link to="/" className="m-2 cursor-pointer">
+      <NavLink to="/" className="m-2 cursor-pointer text-lg">
         Home
-      </Link>
-      <Link to="/about" className="m-2 cursor-pointer">
+      </NavLink>
+      <NavLink to="/about" className="m-2 cursor-pointer text-lg">
         About
-      </Link>
-      <Link to="/readList" className="m-2 cursor-pointer">
+      </NavLink>
+      <NavLink to="/readList" className="m-2 cursor-pointer text-lg">
         ReadList
-      </Link>
+      </NavLink>
     </>
   );
   return (
@@ -38,7 +39,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow "
           >
             {links}
           </ul>
@@ -48,8 +49,21 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end space-x-3">
+        <ReactiveButton
+          rounded
+          shadow
+          size="large"
+          color="teal"
+          idleText="Sign In"
+        />
+        <ReactiveButton
+          rounded
+          shadow
+          size="large"
+          color="teal"
+          idleText="Sign Up"
+        />
       </div>
     </div>
   );
